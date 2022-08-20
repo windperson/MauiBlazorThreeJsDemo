@@ -1,7 +1,32 @@
 ﻿@page "/"
+@inject IJSRuntime JsRuntime
 
-<h1>Hello, world!</h1>
+<PageTitle>3D Demo</PageTitle>
 
-Welcome to your new app.
+<h1>Three.js 3D Demo</h1>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<div id="threejscontainer" style="width: 300px; height: 300px;"></div>
+
+<div>
+    <button type="button" class="btn btn-primary" @onclick="Stop">
+        Stop
+    </button>
+    <button type="button" class="btn btn-primary" @onclick="Dance">
+        Dance
+    </button>
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JsRuntime.InvokeVoidAsync("ThreeJSFunctions.load");
+    }
+    public async Task Stop()
+    {
+        await JsRuntime.InvokeVoidAsync("ThreeJSFunctions.stop");
+    }
+    public async Task Dance()
+    {
+        await JsRuntime.InvokeVoidAsync("ThreeJSFunctions.start");
+    }
+}

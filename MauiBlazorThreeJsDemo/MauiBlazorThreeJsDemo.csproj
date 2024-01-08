@@ -16,7 +16,7 @@
         <ApplicationTitle>MauiBlazorThreeJsDemo</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.mauiblazorthreejsdemo</ApplicationId>
+        <ApplicationId>idv.windperson.mauiblazorthreejsdemo</ApplicationId>
         <ApplicationIdGuid>D4B9F37D-08A2-4452-8590-BECB2211611C</ApplicationIdGuid>
 
         <!-- Versions -->
